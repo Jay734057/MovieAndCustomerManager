@@ -21,11 +21,11 @@ namespace MovieAndCustomerManager.Controllers
             _context.Dispose();
         }
 
-        public List<Customer> customers { get; private set; } = new List<Customer>
-            {
-                new Customer {Name = "Jay Zhu"},
-                new Customer {Name = "Mosh H"}
-            };
+        //public List<Customer> customers { get; private set; } = new List<Customer>
+        //    {
+        //        new Customer {Name = "Jay Zhu"},
+        //        new Customer {Name = "Mosh H"}
+        //    };
 
         // GET: Customer
         public ActionResult Index()
