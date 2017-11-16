@@ -19,17 +19,28 @@ else
             </tr>
         </thead>
         <tbody>
-            @for (int i = 0; i < Model.Count; i++)
+            @foreach (var customer in Model)
             {
                 <tr>
                     <td>
-                        @Html.ActionLink(Model[i].Name, "Details", "Customer", new { id = i }, null)
+                        @Html.ActionLink(customer.Name, "Edit", "Customer", new { id = customer.Id }, null)
+                    </td>
+                    <td>
+                        @customer.MenbershipType.Name
+                    </td>
+                </tr>
+            }
+            @*@for (int i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink(Model[i].Name, "Edit", "Customer", new { id = i }, null)
                     </td>
                     <td>
                         @Model[i].MenbershipType.Name
                     </td>
                 </tr>
-            }
+            }*@
         </tbody>
 
     </table>

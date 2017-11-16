@@ -5,7 +5,7 @@ namespace MovieAndCustomerManager.Models
 {
     public class Genres
     {
-        public int Id { get; set; }
+        public byte Id { get; set; }
         [Required]
         public string Name { get; set; }
     }

@@ -235,13 +235,13 @@
     <Compile Include="Migrations\201711152342267_SetBirthdateNullable.Designer.cs">
       <DependentUpon>201711152342267_SetBirthdateNullable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711152353186_AddGenresToDatabase.cs" />
-    <Compile Include="Migrations\201711152353186_AddGenresToDatabase.Designer.cs">
-      <DependentUpon>201711152353186_AddGenresToDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\201711161307181_AddGenres.cs" />
+    <Compile Include="Migrations\201711161307181_AddGenres.Designer.cs">
+      <DependentUpon>201711161307181_AddGenres.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711152354043_PopulateGenres.cs" />
-    <Compile Include="Migrations\201711152354043_PopulateGenres.Designer.cs">
-      <DependentUpon>201711152354043_PopulateGenres.cs</DependentUpon>
+    <Compile Include="Migrations\201711161308083_PopulateGenres.cs" />
+    <Compile Include="Migrations\201711161308083_PopulateGenres.Designer.cs">
+      <DependentUpon>201711161308083_PopulateGenres.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -255,6 +255,8 @@
     <Compile Include="Startup.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="ViewModels\CustomerFormViewModel.cs" />
+    <Compile Include="ViewModels\MovieFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -319,6 +321,8 @@
     <Content Include="Views\Customer\Details.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Customer\CustomerForm.cshtml" />
+    <Content Include="Views\Movies\MovieForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -367,11 +371,11 @@
     <EmbeddedResource Include="Migrations\201711152342267_SetBirthdateNullable.resx">
       <DependentUpon>201711152342267_SetBirthdateNullable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711152353186_AddGenresToDatabase.resx">
-      <DependentUpon>201711152353186_AddGenresToDatabase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711161307181_AddGenres.resx">
+      <DependentUpon>201711161307181_AddGenres.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711152354043_PopulateGenres.resx">
-      <DependentUpon>201711152354043_PopulateGenres.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711161308083_PopulateGenres.resx">
+      <DependentUpon>201711161308083_PopulateGenres.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

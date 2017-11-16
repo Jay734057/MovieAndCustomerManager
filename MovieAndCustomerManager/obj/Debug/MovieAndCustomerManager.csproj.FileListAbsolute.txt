@@ -65,12 +65,7 @@ D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\Microsoft.AI.Dependenc
 D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\Microsoft.AI.ServerTelemetryChannel.xml
 D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\Microsoft.AI.WindowsServer.xml
 D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\Microsoft.AI.Web.xml
-D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.csprojResolveAssemblyReference.cache
-D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.csproj.CoreCompileInputs.cache
-D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.dll
-D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.pdb
 D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.Migrations.InitialModel.resources
-D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.csproj.GenerateResource.Cache
 D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.Migrations.AddIsSubscribedToCustomer.resources
 D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.Migrations.AddMembershipType.resources
 D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.Migrations.PopulateMembershipTypes.resources
@@ -80,5 +75,10 @@ D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomer
 D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.Migrations.AddBirthdatePropertyToCustomers.resources
 D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.Migrations.SetBirthdateForCustomers.resources
 D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.Migrations.SetBirthdateNullable.resources
-D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.Migrations.AddGenresToDatabase.resources
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.csproj.GenerateResource.Cache
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.csproj.CoreCompileInputs.cache
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.dll
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.pdb
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.csprojResolveAssemblyReference.cache
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.Migrations.AddGenres.resources
 D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.Migrations.PopulateGenres.resources
