@@ -1,5 +1,6 @@
 ﻿
 
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace MovieAndCustomerManager.Models
@@ -10,6 +11,7 @@ namespace MovieAndCustomerManager.Models
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
+        public DateTime? Birthdate { get; set; }
         public bool isSubcribedToNewsletter { get; set; }
         public MembershipType MenbershipType { get; set; }
         public byte MembershipTypeId { get; set; }

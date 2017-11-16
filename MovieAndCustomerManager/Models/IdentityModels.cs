@@ -21,7 +21,8 @@ namespace MovieAndCustomerManager.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
 
-        public DbSet<MovieAndCustomerManager.Models.Customer> Customer { get; set; }
+        public DbSet<Customer> Customer { get; set; }
+        public DbSet<Movie> Movies { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

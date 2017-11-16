@@ -16,14 +16,18 @@ else
         <thead class="thead-dark">
             <tr>
                 <th>Movie</th>
+                <th>Genre</th>
             </tr>
         </thead>
         <tbody>
-            @for (int i = 0; i < Model.Count; i++)
+            @foreach (var movie in Model)
             {
                 <tr>
                     <td>
-                        @Model[i].Name
+                        @Html.ActionLink(movie.Name,"Details","Movies",new { name = movie.Name}, null)
+                    </td>
+                    <td>
+                        @movie.Genre.Name
                     </td>
 
                 </tr>

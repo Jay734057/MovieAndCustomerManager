@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using MovieAndCustomerManager.Models;
 using System.Linq;
 using System.Data.Entity;
@@ -35,7 +34,7 @@ namespace MovieAndCustomerManager.Controllers
 
         public ActionResult Details(int id)
         {
-            var customer = _context.Customer.SingleOrDefault(c => c.Id == id + 1);
+            var customer = _context.Customer.Include(c => c.MenbershipType).SingleOrDefault(c => c.Id == id + 1);
 
             if (customer == null)
                 return new HttpNotFoundResult();

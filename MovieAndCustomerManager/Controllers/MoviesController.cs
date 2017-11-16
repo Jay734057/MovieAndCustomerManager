@@ -4,16 +4,30 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MovieAndCustomerManager.Models;
+using System.Data.Entity;
 
 namespace MovieAndCustomerManager.Controllers
 {
     public class MoviesController : Controller
     {
 
-        public List<Movie> Movies { get; private set; } = new List<Movie> {
-            new Movie {Name = "Jungle Giants" },
-            new Movie {Name = "Chasring the Dragon"}
-        };
+        private ApplicationDbContext _context;
+
+        public MoviesController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+            _context.Dispose();
+        }
+
+        //public List<Movie> Movies { get; private set; } = new List<Movie> {
+        //    new Movie {Name = "Jungle Giants" },
+        //    new Movie {Name = "Chasring the Dragon"}
+        //};
         // GET: Movie
 
         //public ActionResult Random()
@@ -68,16 +82,19 @@ namespace MovieAndCustomerManager.Controllers
 
         public ActionResult Index()
         {
-            return View("Index", Movies);
+            return View(_context.Movies.Include(c => c.Genre).ToList());
         }
 
-        public ActionResult Test(int id)
+        public ActionResult Details(string name)
         {
-            if (id == 1)
-                return Content("this is the page for customers");
-            if (id == 2)
-                return Content("this is the page for movies");
-            return HttpNotFound();
+            var movie = _context.Movies.Include(c => c.Genre).SingleOrDefault(c => c.Name == name);
+
+            if (movie == null)
+                return new HttpNotFoundResult();
+            else
+            {
+                return View(movie);
+            }
         }
     }
 }

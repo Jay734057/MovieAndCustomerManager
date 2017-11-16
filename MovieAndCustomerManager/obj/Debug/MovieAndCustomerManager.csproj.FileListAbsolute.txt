@@ -77,3 +77,8 @@ D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomer
 D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.Migrations.ApplyAnnotationsToCustomerName.resources
 D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.Migrations.AddNamePropertyToMembershipType.resources
 D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.Migrations.SetNameForMembershipType.resources
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.Migrations.AddBirthdatePropertyToCustomers.resources
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.Migrations.SetBirthdateForCustomers.resources
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.Migrations.SetBirthdateNullable.resources
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.Migrations.AddGenresToDatabase.resources
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.Migrations.PopulateGenres.resources
