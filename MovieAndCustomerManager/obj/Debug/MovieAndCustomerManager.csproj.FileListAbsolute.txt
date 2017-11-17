@@ -82,3 +82,11 @@ D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomer
 D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.csprojResolveAssemblyReference.cache
 D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.Migrations.AddGenres.resources
 D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.Migrations.PopulateGenres.resources
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\System.Net.Http.Formatting.dll
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\System.Web.Http.dll
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\System.Web.Http.WebHost.dll
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\System.Net.Http.Formatting.xml
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\System.Web.Http.xml
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\System.Web.Http.WebHost.xml
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\AutoMapper.dll
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\AutoMapper.xml
