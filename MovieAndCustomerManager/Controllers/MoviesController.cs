@@ -120,14 +120,28 @@ namespace MovieAndCustomerManager.Controllers
             {
                 Genres = genres,
                 Title = "New Movie"
-                
+                //Movie = new Movie()
             };
             return View("MovieForm", movieFormViewModel);
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Movie movie)
         {
+            if (!ModelState.IsValid)
+            {
+                var movieFormViewModel = new MovieFormViewModel
+                {
+                    Genres = _context.Genres.ToList(),
+                    Movie = movie,
+                    Title = "New Movie"
+                };
+
+                return View("MovieForm", movieFormViewModel);
+            }
+
+
             if (movie.Id == 0)
             {
                 movie.DateAdded = DateTime.Now;

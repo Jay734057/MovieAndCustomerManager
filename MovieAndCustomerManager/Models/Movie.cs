@@ -19,6 +19,7 @@ namespace MovieAndCustomerManager.Models
         public byte GenreId { get; set; }
 
         [Required]
+        [Range(1,20)]
         [Display(Name = "Number in Stock")]
         public int NumberInStock { get; set; }
 
@@ -29,5 +30,8 @@ namespace MovieAndCustomerManager.Models
         [Required]
         public DateTime DateAdded { get; set; }
 
+        
     }
+
+    
 }
