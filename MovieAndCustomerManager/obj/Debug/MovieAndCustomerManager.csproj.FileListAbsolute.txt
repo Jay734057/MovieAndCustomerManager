@@ -90,4 +90,10 @@ D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\System.Web.Http.xml
 D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\System.Web.Http.WebHost.xml
 D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\AutoMapper.dll
 D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\AutoMapper.xml
-D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.Migrations.FixDatabase.resources
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.Migrations.SeedUsers.resources
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.Migrations.AddDrivingLicenseToApplicationUser.resources
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\Glimpse.Ado.dll
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\Glimpse.AspNet.dll
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\Glimpse.Core.dll
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\Glimpse.EF6.dll
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\Glimpse.Mvc5.dll

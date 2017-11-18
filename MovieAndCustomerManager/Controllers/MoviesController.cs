@@ -25,79 +25,14 @@ namespace MovieAndCustomerManager.Controllers
             _context.Dispose();
         }
 
-        //public List<Movie> Movies { get; private set; } = new List<Movie> {
-        //    new Movie {Name = "Jungle Giants" },
-        //    new Movie {Name = "Chasring the Dragon"}
-        //};
-        // GET: Movie
-
-        //public ActionResult Random()
-        //{
-
-            
-        //    var customers = new List<Customer>
-        //    {
-        //        new Customer {Name = "Customer 1"},
-        //        new Customer {Name = "Customer 2"},
-        //        new Customer {Name = "Customer 3"},
-        //        new Customer {Name = "Customer 4"},
-        //        new Customer {Name = "Customer 5"},
-        //        new Customer {Name = "Customer 6"}
-        //    };
-
-        //    var viewModel = new RandomMovieViewModels
-        //    {
-        //        Movie = Movies,
-        //        Customers = customers
-        //    };
-
-        //    return View(viewModel);
-        //    //return Content("hello");
-        //    //return HttpNotFound();
-        //    //return new EmptyResult();
-        //    //return RedirectToAction("Index", "Home", new { page = 1, sortBy = "name" });
-        //}
-
-        [Route("movies/released/{year:regex(\\d{4}):range(1900, 2100)}}/{month:regex(\\d{2}):range(1, 12)}")]
-
-        public ActionResult ByReleaseDate(int year, byte month)
-        {
-            return Content($"{year}/{month}");
-        }
-
-        //public ActionResult Edit(int id)
-        //{
-        //    return Content($"Content: id = {id.ToString()}");
-        //}
-
-        //public ActionResult Index(int? pageIndex, string sortBy)
-        //{
-        //    if (!pageIndex.HasValue)
-        //        pageIndex = 1;
-
-        //    if (string.IsNullOrWhiteSpace(sortBy))
-        //        sortBy = "name";
-
-        //    return Content($"pageIndex = {pageIndex} & sortBy = {sortBy}.");
-        //}
-
         public ActionResult Index()
         {
-            return View(_context.Movies.Include(c => c.Genre).ToList());
+            if (User.IsInRole(Constants.CanManageMovies))
+                return View("List");
+            return View("ReadOnlyList");
         }
 
-        public ActionResult Details(string name)
-        {
-            var movie = _context.Movies.Include(c => c.Genre).SingleOrDefault(c => c.Name == name);
-
-            if (movie == null)
-                return new HttpNotFoundResult();
-            else
-            {
-                return View(movie);
-            }
-        }
-
+        [Authorize(Roles = Constants.CanManageMovies)]
         public ActionResult Edit(int id)
         {
             var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
@@ -113,6 +48,7 @@ namespace MovieAndCustomerManager.Controllers
             return View("MovieForm", viewModel);
         }
 
+        [Authorize(Roles = Constants.CanManageMovies)]
         public ActionResult New()
         {
             var genres = _context.Genres.ToList();
@@ -127,6 +63,7 @@ namespace MovieAndCustomerManager.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = Constants.CanManageMovies)]
         public ActionResult Save(Movie movie)
         {
             if (!ModelState.IsValid)
@@ -140,7 +77,6 @@ namespace MovieAndCustomerManager.Controllers
 
                 return View("MovieForm", movieFormViewModel);
             }
-
 
             if (movie.Id == 0)
             {
@@ -162,3 +98,75 @@ namespace MovieAndCustomerManager.Controllers
         }
     }
 }
+
+
+
+
+//public List<Movie> Movies { get; private set; } = new List<Movie> {
+//    new Movie {Name = "Jungle Giants" },
+//    new Movie {Name = "Chasring the Dragon"}
+//};
+// GET: Movie
+
+//public ActionResult Random()
+//{
+
+
+//    var customers = new List<Customer>
+//    {
+//        new Customer {Name = "Customer 1"},
+//        new Customer {Name = "Customer 2"},
+//        new Customer {Name = "Customer 3"},
+//        new Customer {Name = "Customer 4"},
+//        new Customer {Name = "Customer 5"},
+//        new Customer {Name = "Customer 6"}
+//    };
+
+//    var viewModel = new RandomMovieViewModels
+//    {
+//        Movie = Movies,
+//        Customers = customers
+//    };
+
+//    return View(viewModel);
+//    //return Content("hello");
+//    //return HttpNotFound();
+//    //return new EmptyResult();
+//    //return RedirectToAction("Index", "Home", new { page = 1, sortBy = "name" });
+//}
+
+//[Route("movies/released/{year:regex(\\d{4}):range(1900, 2100)}}/{month:regex(\\d{2}):range(1, 12)}")]
+
+//public ActionResult ByReleaseDate(int year, byte month)
+//{
+//    return Content($"{year}/{month}");
+//}
+
+//public ActionResult Edit(int id)
+//{
+//    return Content($"Content: id = {id.ToString()}");
+//}
+
+//public ActionResult Index(int? pageIndex, string sortBy)
+//{
+//    if (!pageIndex.HasValue)
+//        pageIndex = 1;
+
+//    if (string.IsNullOrWhiteSpace(sortBy))
+//        sortBy = "name";
+
+//    return Content($"pageIndex = {pageIndex} & sortBy = {sortBy}.");
+//}
+
+
+//public ActionResult Details(string name)
+//{
+//    var movie = _context.Movies.Include(c => c.Genre).SingleOrDefault(c => c.Name == name);
+
+//    if (movie == null)
+//        return new HttpNotFoundResult();
+//    else
+//    {
+//        return View(movie);
+//    }
+//}

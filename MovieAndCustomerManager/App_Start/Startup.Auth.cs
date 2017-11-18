@@ -54,9 +54,9 @@ namespace MovieAndCustomerManager
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "1833407823618045",
+               appSecret: "d15610a053e9647ca25133e361e25bf8");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
