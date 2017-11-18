@@ -24,5 +24,7 @@ namespace MovieAndCustomerManager.Dtos
         public bool isSubcribedToNewsletter { get; set; }
 
         public byte MembershipTypeId { get; set; }
+
+        public MembershipTypeDto MembershipType { get; set; }
     }
 }

@@ -90,3 +90,4 @@ D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\System.Web.Http.xml
 D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\System.Web.Http.WebHost.xml
 D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\AutoMapper.dll
 D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\AutoMapper.xml
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.Migrations.FixDatabase.resources

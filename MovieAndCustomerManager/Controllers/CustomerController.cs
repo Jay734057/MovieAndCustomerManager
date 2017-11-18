@@ -30,12 +30,13 @@ namespace MovieAndCustomerManager.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-            return View(_context.Customer.Include(c => c.MenbershipType).ToList());
+            //return View(_context.Customer.Include(c => c.MenbershipType).ToList());
+            return View();
         }
 
         public ActionResult Details(int id)
         {
-            var customer = _context.Customer.Include(c => c.MenbershipType).SingleOrDefault(c => c.Id == id + 1);
+            var customer = _context.Customer.Include(c => c.MembershipType).SingleOrDefault(c => c.Id == id + 1);
 
             if (customer == null)
                 return new HttpNotFoundResult();

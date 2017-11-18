@@ -6,6 +6,7 @@ using System.Net;
 using System.Web.Http;
 using MovieAndCustomerManager.Dtos;
 using AutoMapper;
+using System.Data.Entity;
 
 namespace MovieAndCustomerManager.Controllers.Api
 {
@@ -18,13 +19,16 @@ namespace MovieAndCustomerManager.Controllers.Api
             _context = new ApplicationDbContext();
         }
 
-        //GET  /api/customer
+        //GET  /api/movies
         public IHttpActionResult GetMovies()
         {
-            return Ok(_context.Movies.ToList().Select(Mapper.Map<Movie, MovieDto>));
+            return Ok(_context.Movies
+                .Include(c => c.Genre)
+                .ToList()
+                .Select(Mapper.Map<Movie, MovieDto>));
         }
 
-        //GET  /api/customer/id
+        //GET  /api/movies/id
         public IHttpActionResult GetMovie(int id)
         {
             var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
@@ -36,7 +40,7 @@ namespace MovieAndCustomerManager.Controllers.Api
         }
 
 
-        //POST  /api/customer
+        //POST  /api/movies
         [HttpPost]
         public IHttpActionResult CreateMovie(MovieDto movieDto)
         {
@@ -51,7 +55,7 @@ namespace MovieAndCustomerManager.Controllers.Api
             return Created(new Uri(Request.RequestUri + "" + movie.Id), movieDto);
         }
 
-        //PUT /api/customer/id
+        //PUT /api/movies/id
         [HttpPut]
         public IHttpActionResult UpdateMovie(int id, MovieDto movieDto)
         {

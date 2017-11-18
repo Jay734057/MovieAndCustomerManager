@@ -22,7 +22,7 @@ namespace MovieAndCustomerManager.Models
         public bool isSubcribedToNewsletter { get; set; }
 
         
-        public MembershipType MenbershipType { get; set; }
+        public MembershipType MembershipType { get; set; }
 
         [Display(Name = "Membership Type")]
         public byte MembershipTypeId { get; set; }

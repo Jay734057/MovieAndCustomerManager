@@ -7,6 +7,7 @@ using System.Web.Http;
 using MovieAndCustomerManager.Models;
 using MovieAndCustomerManager.Dtos;
 using AutoMapper;
+using System.Data.Entity;
 
 namespace MovieAndCustomerManager.Controllers.Api
 {
@@ -22,7 +23,10 @@ namespace MovieAndCustomerManager.Controllers.Api
         //GET  /api/customer
         public IHttpActionResult GetCustomers()
         {
-            return Ok(_context.Customer.ToList().Select(Mapper.Map<Customer, CustomerDto>));
+            return Ok(_context.Customer
+                .Include(c => c.MembershipType)
+                .ToList()
+                .Select(Mapper.Map<Customer, CustomerDto>));
         }
 
         //GET  /api/customer/id
