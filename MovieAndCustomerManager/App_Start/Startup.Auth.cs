@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using MovieAndCustomerManager.Models;
+using System.Configuration;
 
 namespace MovieAndCustomerManager
 {
@@ -55,8 +56,8 @@ namespace MovieAndCustomerManager
             //   consumerSecret: "");
 
             app.UseFacebookAuthentication(
-               appId: "1833407823618045",
-               appSecret: "d15610a053e9647ca25133e361e25bf8");
+               appId: ConfigurationManager.AppSettings["FacebookAppId"],
+               appSecret: ConfigurationManager.AppSettings["FacebookAppSecret"]);
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
