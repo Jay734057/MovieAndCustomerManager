@@ -7,13 +7,13 @@ namespace MovieAndCustomerManager.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class PopulateGenres : IMigrationMetadata
+    public sealed partial class ChangeMovieModel : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(PopulateGenres));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangeMovieModel));
         
         string IMigrationMetadata.Id
         {
-            get { return "201711161254382_PopulateGenres"; }
+            get { return "201711191147063_ChangeMovieModel"; }
         }
         
         string IMigrationMetadata.Source

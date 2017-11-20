@@ -21,10 +21,14 @@ namespace MovieAndCustomerManager.Controllers.Api
         }
 
         //GET  /api/customer
-        public IHttpActionResult GetCustomers()
+        public IHttpActionResult GetCustomers(string query = null)
         {
-            return Ok(_context.Customer
-                .Include(c => c.MembershipType)
+            var customersQuery = _context.Customer.Include(c => c.MembershipType);
+            if (!String.IsNullOrWhiteSpace(query))
+                customersQuery = customersQuery.Where(c => c.Name.Contains(query));
+
+   
+            return Ok(customersQuery
                 .ToList()
                 .Select(Mapper.Map<Customer, CustomerDto>));
         }

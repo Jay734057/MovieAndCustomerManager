@@ -20,10 +20,16 @@ namespace MovieAndCustomerManager.Controllers.Api
         }
 
         //GET  /api/movies
-        public IHttpActionResult GetMovies()
+        public IHttpActionResult GetMovies(string query = null)
         {
-            return Ok(_context.Movies
-                .Include(c => c.Genre)
+            var moviesQuery = _context.Movies
+                .Where(c => c.NumberOfAvailability > 0)
+                .Include(c => c.Genre);
+
+            if (!String.IsNullOrWhiteSpace(query))
+                moviesQuery = moviesQuery.Where(c => c.Name.Contains(query));
+
+            return Ok(moviesQuery
                 .ToList()
                 .Select(Mapper.Map<Movie, MovieDto>));
         }

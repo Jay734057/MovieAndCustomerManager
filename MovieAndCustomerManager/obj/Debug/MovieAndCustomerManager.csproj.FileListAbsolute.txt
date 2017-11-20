@@ -97,3 +97,6 @@ D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\Glimpse.AspNet.dll
 D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\Glimpse.Core.dll
 D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\Glimpse.EF6.dll
 D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\bin\Glimpse.Mvc5.dll
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.Migrations.AddRentalToDatabase.resources
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.Migrations.ChangeRentalModel.resources
+D:\C#\MovieAndCustomerManager\MovieAndCustomerManager\obj\Debug\MovieAndCustomerManager.Migrations.ChangeMovieModel.resources
