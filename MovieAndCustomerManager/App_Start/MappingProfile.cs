@@ -21,6 +21,8 @@ namespace MovieAndCustomerManager.App_Start
             Mapper.CreateMap<MembershipType, MembershipTypeDto>();
 
             Mapper.CreateMap<Genres, GenreDto>();
+
+            Mapper.CreateMap<Rental, RentalItemDto>();
         }
     }
 }

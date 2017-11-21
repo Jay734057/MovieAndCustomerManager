@@ -6,6 +6,7 @@ using MovieAndCustomerManager.ViewModels;
 
 namespace MovieAndCustomerManager.Controllers
 {
+    [Authorize]
     public class CustomerController : Controller
     {
         private ApplicationDbContext _context;
@@ -30,8 +31,9 @@ namespace MovieAndCustomerManager.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-            //return View(_context.Customer.Include(c => c.MenbershipType).ToList());
-            return View();
+            if (User.IsInRole(Constants.CanManageMovies))
+                return View("List");
+            return (View("ReadOnlyList"));
         }
 
         public ActionResult Details(int id)

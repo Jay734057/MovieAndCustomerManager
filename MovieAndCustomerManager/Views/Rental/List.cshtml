@@ -1,0 +1,78 @@
+﻿<h1>Rentals</h1>
+
+<table id="rentals" class="table table-hover table-condensed table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Customer</th>
+            <th>Movie</th>
+            <th>Rental Date</th>
+            <th>Return</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<p>
+    @Html.ActionLink("New Rental", "New", "Rental", null, new { @class = "btn btn-primary btn-lg" })
+</p>
+
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            var table = $("#rentals").DataTable({
+                ajax: {
+                    url: "/api/rental",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "customer.name",
+                    },
+                    {
+                        data: "movie.name"
+                    },
+                    {
+                        data: "dateRented"
+                    },
+                    {
+                        data: "id",
+                        render: function (data) {
+                            return "<button data-rental-id=" + data + " type='button' class='btn btn-link js-return'>Return</button>";
+                        }
+                    }
+                    
+                ]
+            });
+
+            $("#rentals").on("click", ".js-return", function () {
+                var button = $(this);
+
+                bootbox.confirm({
+                    message: "Are you sure you want to return this movie?",
+                    buttons: {
+                        cancel: {
+                            label: 'Cancel'
+                        },
+                        confirm: {
+                            label: 'Confirm'
+                        }
+                    },
+                    callback: function (result) {
+                        if (result) {
+                            $.ajax({
+                                url: "/api/rental/" + button.attr("data-rental-id"),
+                                method: "PUT",
+                                data: {},
+                                success: function () {
+                                    //table.row(button.parents("tr")).remove().draw();
+                                }
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+}

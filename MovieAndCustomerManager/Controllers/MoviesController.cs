@@ -9,6 +9,7 @@ using System.Data.Entity;
 
 namespace MovieAndCustomerManager.Controllers
 {
+    [Authorize]
     public class MoviesController : Controller
     {
 

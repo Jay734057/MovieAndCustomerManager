@@ -1,8 +1,11 @@
-﻿using MovieAndCustomerManager.Dtos;
+﻿using AutoMapper;
+using MovieAndCustomerManager.Dtos;
 using MovieAndCustomerManager.Models;
 using System;
 using System.Linq;
 using System.Web.Http;
+using System.Data.Entity;
+using System.Data.Entity.Validation;
 
 namespace MovieAndCustomerManager.Controllers.Api
 {
@@ -53,5 +56,37 @@ namespace MovieAndCustomerManager.Controllers.Api
 
             return Ok();
         }
+
+        //GET  /api/rental
+        [HttpGet]
+        public IHttpActionResult GetRentals()
+        {
+            return Ok(_context.Rentals
+                .Include(c => c.Customer)
+                .Include(c => c.Movie)
+                .ToList()
+                .Select(Mapper.Map<Rental, RentalItemDto>));
+        }
+
+        //PUT /api/rental/id
+        [HttpPut]
+        public IHttpActionResult UpdateRental(int id)
+        {
+            var rentalInDb = _context.Rentals
+                .Include(c => c.Customer)
+                .Include(c => c.Movie)
+                .SingleOrDefault(c => c.Id == id);
+
+            if (rentalInDb == null)
+                return NotFound();
+
+            rentalInDb.DateReturned = DateTime.Now;
+            rentalInDb.Movie.NumberOfAvailability++;
+
+            _context.SaveChanges();
+            return Ok();
+        }
+
+
     }
 }
