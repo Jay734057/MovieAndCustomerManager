@@ -84,7 +84,7 @@ namespace MovieAndCustomerManager.Controllers.Api
             rentalInDb.Movie.NumberOfAvailability++;
 
             _context.SaveChanges();
-            return Ok();
+            return Ok(String.Format("{0:f}", rentalInDb.DateReturned));
         }
 
 

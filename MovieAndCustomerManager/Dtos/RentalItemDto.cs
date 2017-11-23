@@ -8,11 +8,11 @@ namespace MovieAndCustomerManager.Dtos
 
         public int Id { get; set; }
 
-        public Customer Customer { get; set; }
+        public string CustomerName { get; set; }
 
-        public Movie Movie { get; set; }
+        public string MovieName { get; set; }
 
-        public DateTime DateRented { get; set; }
-        public DateTime DateReturned { get; set; }
+        public string DateRented { get; set; }
+        public string DateReturned { get; set; }
     }
 }

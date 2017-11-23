@@ -26,10 +26,16 @@
                 },
                 columns: [
                     {
-                        data: "name"
+                        data: "name",
+                        render: function (data) {
+                            return "<h5>" + data + "</h5>";
+                        }
                     },
                     {
-                        data: "genre.name"
+                        data: "genre.name",
+                        render: function (data) {
+                            return "<h5>" + data + "</h5>";
+                        }
                     }
                 ]
             });

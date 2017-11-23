@@ -27,9 +27,15 @@
                 columns: [
                     {
                         data: "name",
+                        render: function (data) {
+                            return "<h5>" + data + "</h5>";
+                        }
                     },
                     {
-                        data: "membershipType.name"
+                        data: "membershipType.name",
+                        render: function (data) {
+                            return "<h5>" + data + "</h5>";
+                        }
                     },
                 ]
             });

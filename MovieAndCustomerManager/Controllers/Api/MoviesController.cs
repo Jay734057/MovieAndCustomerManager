@@ -53,6 +53,7 @@ namespace MovieAndCustomerManager.Controllers.Api
                 return BadRequest();
 
             var movie = Mapper.Map<MovieDto, Movie>(movieDto);
+            movie.NumberOfAvailability = movie.NumberInStock;
             _context.Movies.Add(movie);
             _context.SaveChanges();
 

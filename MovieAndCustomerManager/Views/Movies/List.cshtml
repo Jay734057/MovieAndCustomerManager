@@ -33,11 +33,14 @@
                     {
                         data: "name",
                         render: function (data, type, movie) {
-                            return "<a href='/movies/edit/" + movie.id + "'>" + data + "</a>";
+                            return "<h5><a href='/movies/edit/" + movie.id + "'>" + data + "</a></h5>";
                         }
                     },
                     {
-                        data: "genre.name"
+                        data: "genre.name",
+                        render: function (data) {
+                            return "<h5>" + data + "</h5>";
+                        }
                     },
                     {
                         data: "id",
